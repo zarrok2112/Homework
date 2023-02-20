@@ -5,7 +5,6 @@ import FirstApp from "./FirstApp"
 import { ComponentApp } from './componentApp'
 import Cards from './components/Cards'
 
-import './index.css'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
