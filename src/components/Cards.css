@@ -1,10 +1,22 @@
 .card{
     background-color: #242424 !important;
     border-color: aqua !important;
+    width: 300px !important;
+    height: 400px !important;
+
 }
 
 .card:hover{
+    cursor: pointer;
     transform: scale(1.1) !important;
     box-shadow: 0 0 30px #fff !important;
-    transition: all 0.3s ease !important;
+    transition: all 0.7s ease !important;
 }
+
+.card-body{
+    flex: 0 1 auto !important;;
+    padding: 0.2rem !important; ;
+    width: 235px !important;
+    height: 10px !important;
+}
+
