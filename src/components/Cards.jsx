@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Card from './Card';
-import { ComponentApp } from './componentApp';
+
+import { GifExpertApp } from './gifExpert/GiftExpertApp';
 import { FirstApp } from './FirstApp'
 
 //imagenes
@@ -15,7 +16,7 @@ export const cards = [
     title: 'Gif Expert',
     descripcion:"Muestra una gran variedad de gifs",
     image: imagen1,
-    component: ComponentApp,
+    component: GifExpertApp,
   },
   {
     id: 2,
