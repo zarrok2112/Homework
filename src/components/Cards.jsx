@@ -3,6 +3,7 @@ import Card from './Card';
 
 import { GifExpertApp } from './gifExpert/GiftExpertApp';
 import { FirstApp } from './FirstApp'
+import { Arrays } from './Arrays/Arrays';
 
 //imagenes
 import imagen1 from '../assets/punto1.jpg';
@@ -10,7 +11,7 @@ import imagen2 from '../assets/punto2.jpg';
 import imagen3 from '../assets/punto3.jpg';
 
 //datos de las cartas
-export const cards = [
+const cards = [
   {
     id: 1,
     title: 'Gif Expert',
@@ -27,10 +28,10 @@ export const cards = [
   },
   {
     id: 3,
-    title: 'weiss',
-    descripcion:"en construccion",
+    title: 'Tarea de arreglos',
+    descripcion:"Una tarea donde se debe implementar varios arreglos",
     image: imagen3,
-    component: FirstApp,
+    component: Arrays,
   },
 ];
 
