@@ -1,5 +1,7 @@
 import React from 'react'
 import image1 from '../assets/punto1.jpg'
+import './Cards.css';
+
 
 function Card() {
   return (
