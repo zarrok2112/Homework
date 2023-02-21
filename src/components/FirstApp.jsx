@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import reactLogo from './assets/logo.gif'
-import './App.css'
+import reactLogo from '../assets/logo.gif'
+import '../App.css'
 
-const FirstApp = ({value}) => {
+export const FirstApp = ({value = 100}) => {
     const [counter, setCounter] = useState(value)
     
     const handleAdd = () => {
@@ -33,5 +33,3 @@ const FirstApp = ({value}) => {
         </>
     )
 }
-
-export default FirstApp
