@@ -1,14 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import Cards from './components/Cards';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'animate.css/animate.min.css';
+const App = () => {
+  const [inputValue, setInputValue] = useState('');
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App/>
-  </React.StrictMode>,
-)
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      const number = parseInt(inputValue);
+      if (!isNaN(number)) {
+        const result = number % 2 === 0 ? 'par' : 'impar';
+        console.log(`${number} es ${result}`);
+      } else {
+        console.log(`"${inputValue}" no es un número válido`);
+      }
+      setInputValue('');
+    }
+  };
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  return (
+    <div>
+      <input type="text" value={inputValue} onChange={handleInputChange} onKeyDown={handleKeyDown} />
+    </div>
+  );
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
