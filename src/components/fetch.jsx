@@ -2,8 +2,8 @@ import React from "react";
 import { useFetch } from "../hooks/useFetch";
 
 export const Fetch = () => {
-  const url = "https://api.gameofthronesquotes.xyz/v1/random";
-  const { data, isLoading, hasError } = useFetch(url);
+  const list = [2,4,6,8,10]
+  const { calor,setValor} = useState(url);
 
   if (isLoading) {
     return <p>Loading...</p>;
