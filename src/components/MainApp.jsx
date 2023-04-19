@@ -12,11 +12,15 @@ import { HomePage } from '../pages/HomePage';
 import { LoginPage } from '../pages/LoginPage';
 //import { NotFoundPage } from './NotFoundPage';
 import { NavComponent } from './components/NavComponent';
+import {UserProvider} from '../context/UserProvider'
+import { PrivateRoutes } from './PrivateRoutes';
+import { TodoApp } from '.';
 
 export const MainApp = () => {
 	return (
 		<>
 			<Router>
+				<UserProvider>
 				<NavComponent />
 				<Routes>
 					<Route path="/" element={<HomePage />} />
@@ -24,8 +28,10 @@ export const MainApp = () => {
 					<Route path="/login" element={<LoginPage />} />
 					<Route path="*" element={<Navigate to="/" />} />
 					{/* <Route path="*" element={<LoginPage />} /> */}
+					<Route path='/todo/:id' element={<PrivateRoutes><TodoApp/> </PrivateRoutes>}/>
 
 				</Routes>
+				</UserProvider>
 			</Router>
 		</>
 	);
