@@ -1,6 +1,6 @@
 import { TodoItem } from './todoItem';
 
-export const TodoList = ({ todos = [] }) => {
+export const TodoList = ({ todos = [], onDeleteTodo, onToggleTodo }) => {
 
 	return (
 		<>
@@ -11,6 +11,8 @@ export const TodoList = ({ todos = [] }) => {
                             <TodoItem
                                 key={key}
                                 todo={todo}
+                                onDeleteTodo={onDeleteTodo}
+                                onToggleTodo={onToggleTodo}
                             />
                         );
                     })

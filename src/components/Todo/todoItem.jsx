@@ -1,15 +1,14 @@
-import React from "react";
-
-
-export const TodoItem = ({ todo }) => {
+export const TodoItem = ({ todo, onDeleteTodo, onToggleTodo }) => {
 
 	return (
 		<>
-			<li className=''>
+			<li className='list-group-items d-flex justify-content-between'>
 				<span 
-				className=""> {todo.description} </span>
+				onClick={ () => onToggleTodo( todo.id ) }
+				className={`align-self-center w-100 rounded border border-dark m-1 ${todo.done ? 'text-decoration-line-through bg-success' : ''}`}> {todo.description} </span>
 				<button 
-				className=''> Borrar </button>
+				className='btn btn-danger'
+				onClick={ () => {onDeleteTodo( todo.id )} }> Borrar </button>
 			</li>
 		</>
 	);

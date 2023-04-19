@@ -1,6 +1,6 @@
 import React from "react";
-import useCustomCounter from "../hooks/useCustomCounter";
-import Fetch from "./Fetch";
+import {useCustomCounter} from "../hooks/useCustomCounter";
+import {useFetch} from "./useFetch";
 
 const MultipleCustomHooks = (url) => {
   const [count, incrementCount] = useCustomCounter(0);

@@ -1,39 +1,38 @@
 import { useState } from "react";
 
 export const TodoAdd = ({ onNewTodo }) => {
-  const [description, setDescription] = useState("");
+	
+	const [description, setDescription] = useState("");
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+	const addDescription = (e) => {
+		setDescription(e.target.value);
+	};
 
-    const newTodo = {
-      id: new Date().getTime(),
-      description: description,
-      done: false,
-    };
+    const onFormSubmit = ( event ) => {
+        event.preventDefault();
+        
+        const newTodo = {
+            id: new Date().getTime(),
+            description: description,
+            done: false,
+        }
 
-    onNewTodo(newTodo);
+        onNewTodo( newTodo );
 
-    // Reset the description field
-    setDescription("");
-  };
+		setDescription('');
+    }
 
-  const onDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
-
-  return (
-    <>
-      <form onSubmit={onFormSubmit}>
-        <input
-          type="text"
-          placeholder="Tarea"
-          className="form-control"
-          value={description}
-          onChange={onDescriptionChange}
-        />
-        <button type="submit">Agregar</button>
-      </form>
-    </>
-  );
+	return (
+		<>
+			<form onSubmit={ (event) => onFormSubmit(event)}>
+				<input
+					type='text'
+					className='form-control'
+					value={description}
+					onChange={addDescription}
+				/>
+				<button className='btn btn-outline-primary mt-1'>Agregar</button>
+			</form>
+		</>
+	);
 };
